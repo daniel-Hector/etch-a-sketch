@@ -7,8 +7,8 @@ function generateGrid() {
   
     for(let numOfBoxes = 1; numOfBoxes <= 256; numOfBoxes++) {
         const box = document.createElement('div');
-        box.style.width = '35px';
-        box.style.height = '35px';
+        box.style.flexBasis = '36px';
+        box.style.flexShrink = '1';
         box.addEventListener('mouseover', (event) => {
            changeBoxColor(event.target);
         });
