@@ -2,11 +2,17 @@ function changeBoxColor(targetDiv) {
     targetDiv.style.backgroundColor = 'white';
 }
 
-function generateGrid() {
+function generateGrid(gridSize) {
     const gridContainer = document.querySelector('.gridContainer');
-  
-    for(let numOfBoxes = 1; numOfBoxes <= 256; numOfBoxes++) {
+
+    let size = 256;
+    if(gridSize < 101) {
+        size = gridSize * gridSize;
+    }
+
+    for(let numOfBoxes = 1; numOfBoxes <= size; numOfBoxes++) {
         const box = document.createElement('div');
+        box.className = 'box';
         box.style.flexBasis = '36px';
         box.style.flexShrink = '1';
         box.addEventListener('mouseover', (event) => {
@@ -16,3 +22,13 @@ function generateGrid() {
     }
 }
 generateGrid();
+
+const button = document.querySelector('button');
+button.addEventListener('click', () => {
+    let userInput = prompt('Choose a number between 17-100');
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach(box => {
+        box.remove();
+    });
+    generateGrid(userInput);
+});
