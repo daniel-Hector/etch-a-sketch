@@ -7,8 +7,8 @@ body {
 .gridContainer {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     border: 10px ridge purple;
     width: 600px;
     height: 600px;
-    padding: 15px;
 }
