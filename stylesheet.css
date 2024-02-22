@@ -1,7 +1,8 @@
 body {
     background-color: black;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .gridContainer {
@@ -11,4 +12,9 @@ body {
     border: 10px ridge purple;
     width: 600px;
     height: 600px;
+}
+
+button {
+    height: 70px;
+    width: 100px;
 }
